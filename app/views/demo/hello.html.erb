@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello Page</title>
+    <style media="screen">
+    *{
+      background-color: Red;
+    }
+      h1{
+        text-align: center;
+        color: darkblue;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <%= link_to('Home Page', {:action => 'index'}) %>
+    </nav>
+    <h1>hello world from Hello template</h1>
+    <h1><%= 1 + 1 %></h1>
+    <% target = "World"%>
+    <h1><%= "Hello #{target}"  %></h1>
+
+  <h1> it is three times : <%=
+    3.times do |n|
+      puts n
+    end
+    %></h1>
+
+    <h1>
+      <% @array.each do |n| %>
+        <%= n %><br>
+      <%end%>
+    </h1><br>
+    <h1>
+      ID: <%= @id %><br>
+      ID: <%= params[:id]%><br>
+      Page: <%= @page %><br>
+      NxtPage: <%= @page.to_i + 1 %>
+    </h1>
+
+  </body>
+</html>
