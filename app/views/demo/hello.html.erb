@@ -3,9 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>Hello Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
     <style media="screen">
     *{
-      background-color: Red;
+      background-color: #ffffff;
     }
       h1{
         text-align: center;
@@ -17,6 +20,20 @@
     <nav>
       <%= link_to('Home Page', {:action => 'index'}) %>
     </nav>
+
+    <%= form_tag("/search", method: "get") do %>
+      <%= label_tag(:q, "Search for:") %>
+      <%= text_field_tag(:q) %>
+      <%= submit_tag("Search") %>
+    <% end %>
+
+
+<!-- <form accept-charset="UTF-8" action="/search" method="get">
+  <input name="utf8" type="hidden" value="&#x2713;" />
+  <label for="q">Search for:</label>
+  <input id="q" name="q" type="text" />
+  <input name="commit" type="submit" value="Search" />
+</form> -->
     <h1>hello world from Hello template</h1>
     <h1><%= 1 + 1 %></h1>
     <% target = "World"%>
@@ -39,6 +56,7 @@
       Page: <%= @page %><br>
       NxtPage: <%= @page.to_i + 1 %>
     </h1>
+
 
   </body>
 </html>
