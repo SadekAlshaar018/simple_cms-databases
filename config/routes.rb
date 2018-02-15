@@ -1,12 +1,8 @@
 Rails.application.routes.draw do
   get 'subjects/index'
-
   get 'subjects/show'
-
   get 'subjects/new'
-
   get 'subjects/edit'
-
   get 'subjects/delete'
 
   # hier onder is a default route, a syntax route
