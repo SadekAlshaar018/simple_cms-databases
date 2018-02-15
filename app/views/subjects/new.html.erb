@@ -1,2 +1,28 @@
-<h1>Subjects#new</h1>
-<p>Find me in app/views/subjects/new.html.erb</p>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous">
+<%= link_to("<<back to list", subjects_path, :class => 'back-line')%>
+<div class="subjects new">
+  <h2>Create Subject</h2>
+
+    <!-- add form for new subject by Ruby on rails, we can do it by html tags -->
+    <%= form_for(@subject) do |f| %>
+    <table class="table table-dark">
+      <tr>
+        <th>Name :</th>
+        <td><%= f.text_field(:name)%></td>
+      </tr>
+      <tr>
+        <th>Position :</th>
+        <td><%= f.text_field(:position)%></td>
+      </tr>
+      <tr>
+        <th>Visible :</th>
+        <td><%= f.text_field(:visible)%></td>
+      </tr>
+    </table>
+    <div class="form-buttons">
+      <%= f.submit("Create Subject", :class => "btn btn-dark") %>
+    </div>
+    <% end %>
+</div>

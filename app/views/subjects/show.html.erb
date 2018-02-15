@@ -1,2 +1,29 @@
-<h1>Subjects#show</h1>
-<p>Find me in app/views/subjects/show.html.erb</p>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous">
+<%= link_to('<< back to List ', subjects_path, :class => 'black-line')%>
+<div class="subjects show">
+  <h2>Show Subject</h2>
+  <table summary="subject detail view" class="table">
+    <tr>
+      <th>Name</th>
+      <td><%= @subject.name %></td>
+    </tr>
+    <tr>
+      <th>Posision</th>
+      <td><%= @subject.position %></td>
+    </tr>
+    <tr>
+      <th>Visible?</th>
+      <td><%= @subject.visible ? 'true' : 'false' %></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @subject.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @subject.updated_at %></td>
+    </tr>
+  </table>
+</div>
