@@ -3,4 +3,14 @@
       crossorigin="anonymous">
 <%= link_to('<< back to List ', subjects_path, :class => 'black-line')%>
 <div class="subjects delete">
+  <h2>Delete Subject</h2>
+  <%= form_for(@subject, :url => subject_path(@subject), :method => 'delete') do |f| %>
+    <p>Are you sure you want <em>DELETE</em>this subject ?</p>
+    <!-- we can use in another way -->
+    <!-- <p class="reference-name"><%= @subject.name%></p> -->
+    <p class="reference-name"><%= f.object.name%></p>
+    <div class="form-buttons">
+      <%= f.submit("Delete Subject", :class => "btn btn-danger")%>
+    </div>
+  <% end %>
 </div>
