@@ -1,6 +1,7 @@
 class SubjectsController < ApplicationController
   # reading list
   def index
+    @subjects = Subject.sorted
   end
 
   def show
@@ -19,7 +20,7 @@ class SubjectsController < ApplicationController
 
   def update
   end
-  
+
 # deleting a list or subject
   def delete
   end
