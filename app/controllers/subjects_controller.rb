@@ -20,6 +20,7 @@ class SubjectsController < ApplicationController
     # save the object
     if @subject.save
     # if saving success redirect to index of what ever we want
+    flash[:notice] = "Subject '#{@subject.name}' Created a successfully."
     redirect_to(subjects_path)
     else
     # if saving false redisplay the form with errors to fixed door user
@@ -39,6 +40,7 @@ class SubjectsController < ApplicationController
     # Update the object
     if @subject.update_attributes(subject_params)
     # if saving success redirect to index of what ever we want
+    flash[:notice] = "Subject '#{@subject.name}' Updated a successfully."
     redirect_to(subject_path(@subject))
     else
     # if saving false redisplay the form with errors to fixed door user
@@ -56,6 +58,7 @@ class SubjectsController < ApplicationController
     @subject = Subject.find(params[:id])
 
     @subject.destroy
+    flash[:notice] = "Subject '#{@subject.name}' Destroyed a successfully."
     redirect_to(subjects_path)
 
   end
