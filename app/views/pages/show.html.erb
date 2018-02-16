@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous">
+
+<% if !flash[:notice].blank?%>
+  <div class="alert alert-warning">
+    <%= flash[:notice]%>
+  </div>
+<% end %>
+
+<%= link_to('<< back to List ', pages_path, :class => 'black-line')%>
+<div class="subjects show">
+  <h2>Show Pages</h2>
+  <table summary="pages detail view" class="table">
+    <tr>
+      <th>Name</th>
+      <td><%= @page.name %></td>
+    </tr>
+    <tr>
+      <th>Subject ID</th>
+      <td><%= @page.subject_id%></td>
+    </tr>
+    <tr>
+      <th>Permalink</th>
+      <td><%= @page.permalink%></td>
+    </tr>
+    <tr>
+      <th>Posision</th>
+      <td><%= @page.position %></td>
+    </tr>
+    <tr>
+      <th>Visible?</th>
+      <td><%= @page.visible ? 'true' : 'false' %></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @page.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @page.updated_at %></td>
+    </tr>
+  </table>
+</div>

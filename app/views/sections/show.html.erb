@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous">
+
+<% if !flash[:notice].blank?%>
+  <div class="alert alert-warning">
+    <%= flash[:notice]%>
+  </div>
+<% end %>
+
+<%= link_to('<< back to List ', sections_path, :class => 'black-line')%>
+<div class="subjects show">
+  <h2>Show Pages</h2>
+  <table summary="pages detail view" class="table">
+    <tr>
+      <th>Name</th>
+      <td><%= @section.name %></td>
+    </tr>
+    <tr>
+      <th>Posision</th>
+      <td><%= @section.position %></td>
+    </tr>
+    <tr>
+      <th>Visible?</th>
+      <td><%= @section.visible ? 'true' : 'false' %></td>
+    </tr>
+    <tr>
+      <th>Content_type</th>
+      <td><%= @section.content_type%></td>
+    </tr>
+    <tr>
+      <th>Content</th>
+      <td><%= @section.content%></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @section.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @section.updated_at %></td>
+    </tr>
+  </table>
+</div>

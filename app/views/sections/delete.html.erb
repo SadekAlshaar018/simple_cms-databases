@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous">
+
+<% if !flash[:notice].blank? %>
+    <div class="alert alert-warning" >
+        <%= flash[:notice]%>
+    </div>
+<% end %>
+
+<%= link_to('<< back to List ', sections_path, :class => 'black-line')%>
+<div class="pages delete">
+  <h2>Delete Section</h2>
+  <%= form_for(@section, :method => 'delete') do |f| %>
+    <p>Are you sure you want <em> DELETE </em> this subject ?</p>
+    <p class="reference-name"><%= f.object.name%></p>
+    <div class="form-buttons">
+      <%= f.submit("Delete Section", :class => "btn btn-danger")%>
+    </div>
+  <% end %>
+</div>

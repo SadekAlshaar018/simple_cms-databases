@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous">
+<% if !flash[:notice].blank? %>
+    <div class="alert alert-success">
+        <%= flash[:notice]%>
+    </div>
+<% end %>
+
+<div class="pages index">
+  <h2>Pages</h2>
+  <%= link_to("Add new Page", new_page_path, :class => 'action new')%><br /><br />
+  <table class="table" summary="Pages list">
+    <tr class="header">
+      <th>#</th>
+      <th>Subject ID</th>
+      <th>Page</th>
+      <th>Permalink</th>
+      <th>Visible</th>
+      <th>Sections</th>
+      <th>Actions</th>
+    </tr>
+    <% @pages.each do |page| %>
+
+    <tr>
+      <td><%= page.name %></td>
+      <td><%= page.subject_id %></td>
+      <td><%= page.permalink %></td>
+      <td><%= page.position %></td>
+      <td class="center"><%= page.visible ? 'yes' : 'no'%></td>
+      <td class="actions">
+        <%= link_to("Show", page_path(page), :class => 'action show')%> |
+        <%= link_to("Edit", edit_page_path(page), :class => 'action edit')%> |
+        <%= link_to("Delete", delete_page_path(page), :class => 'action delete')%>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
